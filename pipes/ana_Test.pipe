@@ -4,9 +4,7 @@ TOKEN "READ_TOKEN" READ
 NODE ana_Test_0
 SQL >
     %
-    SELECT *
-    from yellow_tripdata_2018_01
-    where tpep_pickup_datetime > {{ DateTime(tpep_pickup_datetime, '2017-12-31 11:31:49') }}
+    SELECT * from yellow_tripdata_2018_01 where trip_distance > {{ Float32(trip_distance, '5') }}
 
 NODE ana_Test_1
 SQL >
