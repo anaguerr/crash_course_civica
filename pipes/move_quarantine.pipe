@@ -1,0 +1,12 @@
+NODE move_quarantine_0
+SQL >
+    SELECT
+        coalesce(toInt64(some_int), 0) as some_int,
+        coalesce(toInt64(some_values), 0) as some_values,
+        coalesce(toInt16(values_weighted), 0) as values_weighted,
+        toInt64(some_int_2) as some_int_2
+    FROM test_crash_course_quarantine
+
+NODE move_quarantine_1
+SQL >
+    SELECT * FROM test_crash_course_quarantine

@@ -1,0 +1,8 @@
+SCHEMA >
+    `some_int` Int64,
+    `some_values` Int64,
+    `values_weighted` Int16,
+    `some_int_2` Nullable(Int64)
+
+ENGINE MergeTree
+ENGINE_SORTING_KEY some_int, some_values, values_weighted

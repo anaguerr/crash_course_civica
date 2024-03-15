@@ -1,0 +1,13 @@
+TOKEN "ana_Test_endpoint_read_8666" READ
+TOKEN "READ_TOKEN" READ
+
+NODE ana_Test_0
+SQL >
+    %
+    SELECT *
+    from yellow_tripdata_2018_01
+    where tpep_pickup_datetime > {{ DateTime(tpep_pickup_datetime, '2017-12-31 11:31:49') }}
+
+NODE ana_Test_1
+SQL >
+    SELECT count() as trips FROM ana_Test_0

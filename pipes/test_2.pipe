@@ -1,0 +1,10 @@
+TOKEN "READ_TOKEN" READ
+
+NODE ana_Test_0
+SQL >
+    %
+    SELECT * from yellow_tripdata_2018_01 where passenger_count = {{ Float32(passenger_count, 2) }}
+
+NODE ana_Test_1
+SQL >
+    SELECT count() as trips FROM ana_Test_0

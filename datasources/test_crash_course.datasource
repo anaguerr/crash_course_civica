@@ -1,0 +1,8 @@
+SCHEMA >
+    `some_int` Int64 `json:$.some_int`,
+    `some_values` Int16 `json:$.some_values`,
+    `values_weighted` Int16 `json:$.values_weighted`,
+    `some_int_2` Nullable(Int64) `json:$.some_int_2`
+
+ENGINE MergeTree
+ENGINE_SORTING_KEY some_int, some_values, values_weighted

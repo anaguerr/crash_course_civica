@@ -1,0 +1,11 @@
+NODE materialization_0
+SQL >
+    SELECT
+        toStartOfDay(tpep_pickup_datetime) AS day,
+        sumState(passenger_count) AS sum_passegers,
+        avgState(trip_distance) AS avg_distance
+    FROM yellow_tripdata_2018_01
+    GROUP BY day
+
+TYPE MATERIALIZED
+DATASOURCE materialization_0_mv
