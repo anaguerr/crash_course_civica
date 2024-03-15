@@ -1,0 +1,4 @@
+NODE mat
+SQL >
+    SELECT some_int, toInt64(some_values) as some_values, values_weighted, some_int_2
+    FROM test_crash_course

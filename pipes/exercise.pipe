@@ -1,0 +1,16 @@
+TOKEN "exercise_endpoint_read_6723" READ
+
+NODE exercise_0
+SQL >
+    Select count()
+    from (SELECT * FROM yellow_tripdata_2018_01 where toStartOfDay(tpep_pickup_datetime) = '2018-01-01')
+
+NODE exercise_1
+SQL >
+    select count() from (SELECT * FROM yellow_tripdata_2018_01 where trip_distance between 1 and 2)
+
+NODE exercise_2
+SQL >
+    SELECT day, sumMerge(sum_passegers) as sum_passegers, avgMerge(avg_distance) as avg_distance
+    FROM materialization_0_mv
+    group by day

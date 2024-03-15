@@ -1,0 +1,3 @@
+NODE changing_sorting_key_0
+SQL >
+    SELECT * FROM yellow_tripdata_2018_01
